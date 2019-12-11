@@ -1,0 +1,19 @@
+{
+  "name": "p.3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js.js",
+  "scripts": {
+    "sass" : "sass --watch ./main.scss:./style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustFS/P3-SASS.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustFS/P3-SASS/issues"
+  },
+  "homepage": "https://github.com/JustFS/P3-SASS#readme"
+}
