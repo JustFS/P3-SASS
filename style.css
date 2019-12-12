@@ -1,6 +1,67 @@
 body {
-  background-color: #151515 !important;
+  margin: 0;
+  padding: 0;
+  font-family: "Baumans", cursive;
+  color: #F3F0F0;
   height: 100vh;
+  background: url("./media/background.jpg") no-repeat 50% 50%;
+  background-size: cover;
+}
+body > .gradient {
+  background: linear-gradient(167deg, #030101 16%, rgba(0, 0, 0, 0) 100%);
+  height: 100vh;
+}
+
+li {
+  list-style: none;
+}
+
+.title {
+  padding: 5px 0 0 0;
+}
+.title p {
+  font-family: "Megrim", cursive;
+  font-size: 60px;
+  text-transform: uppercase;
+  margin: 0px;
+  padding-left: 16px;
+  position: absolute;
+}
+.title p:nth-child(1) {
+  color: #FF916B;
+  margin: 3px 0 0 3px;
+  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FF916B, 7px 8px 17px rgba(206, 89, 55, 0);
+}
+.title p:nth-child(2) {
+  color: #F1485B;
+  margin: 1px 0 0 1px;
+}
+.title p:nth-child(3) {
+  color: #84c1ff;
+}
+
+.nav {
+  text-align: right;
+  position: relative;
+  margin-top: -110px;
+}
+.nav li {
+  display: inline;
+  padding: 5px 15px;
+  border-left: 3px solid #F3F0F0;
+}
+
+.line {
+  width: 88%;
+  height: 100px;
+  border: solid 1px #F3F0F0;
+  border-color: orange transparent transparent transparent;
+  border-radius: 45%/60px 100px 0 0;
+  margin: 70px 0 0 30px;
+}
+
+.carousel {
+  padding-top: 110px;
 }
 
 /*# sourceMappingURL=style.css.map */
