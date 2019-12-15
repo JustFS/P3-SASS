@@ -21,11 +21,14 @@ li {
 }
 a {
     text-decoration: none;
+        &:visited { 
+            color: $white;
+    }
 }
 
 // ******************** HEADER *********************
 .title {
-    padding: 5px 0 0 0;
+    padding-top: 5px;
     
     p {
     font-family: 'Megrim', cursive;
@@ -56,7 +59,7 @@ a {
     margin-top: -110px;
     li {
     display: inline;
-    padding: 5px 15px;
+    padding: 0 15px;
     border-left: 3px solid $white;
     } 
 }
@@ -72,18 +75,20 @@ a {
 
 // *********************** CAROUSEL **************************
 .carousel {
+    padding-top: 20px;
     width: 35%;
-    max-width: 600px;
+    max-width: 400px;
+    border-radius:79% 21% 73% 27% / 4% 97% 3% 96% ;
     overflow: hidden;
     margin: 0 auto;
-    box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.43);
+    box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.63);
     &__figure {
         position: relative;
         width: 300%;
         margin: 0;
         padding: 0;
         font-size: 0;
-        animation: 35s sliders infinite;
+        animation: 28s sliders infinite;
         &--pic {
             width: 33.333%;
             height: auto;
@@ -165,28 +170,36 @@ a {
         transform: translateZ(35px);
     }
 }
-
 // ******************* BUTTON ***********************
+
+@mixin dash ($array, $offset, $width) {
+    stroke-dasharray: $array;
+    stroke-dashoffset: $offset;
+    stroke-width: $width;
+}
 .block {
-    padding-top: 200px;
+    padding-top: 250px;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     margin: 0 auto;
     width: 320px;  
 
+    &:hover
+        &__element {
+            @include dash(760, 0, 2px)
+        }
+
     &__element {
-        stroke-dasharray: 140 540;
-        stroke-dashoffset: -474;
-        stroke-width: 8px;
         fill: transparent;
         stroke: $orange;
-        border-bottom: 5px solid $blue;
+        border-bottom: 5px solid $orange;
         transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+        @include dash(140 540, -474, 8px);
 
         &--modifier {
             text-align: center;
-            font-size: 22px;
+            font-size: 32px;
             line-height: 32px;
             letter-spacing: 8px;
             color: $white;
@@ -195,19 +208,23 @@ a {
         }
     }
 }
-.block:hover .block__element {
-    stroke-width: 2px;
-    stroke-dashoffset: 0;
-    stroke-dasharray: 760;
-  }
-
 // ******************** FOOTER **********************
 
-footer {
-
-}
-
-footer p {
+.credits {
+    margin-top: -70px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 70px;
+    font-size: 1.3em;
     font-family: 'Megrim', cursive;
+}
+.credits a:hover {
+    transform: scale(3.0);
+    transition: 0.4s;
+    text-shadow: $white 0px 0px 5px, $white 0px 0px 10px, $white 0px 0px 15px, $orange 0px 0px 20px, $orange 0px 0px 30px, $orange 0px 0px 40px, $orange 0px 0px 50px, $orange 0px 0px 75px, 2px 2px 2px rgba(64,131,114,0);
 
+    &:nth-child(5) {
+        transform: scale(1.1);
+        font-weight: bolder;
+    }
 }
