@@ -1,13 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Baumans|Megrim&display=swap");
 body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
   font-family: "Baumans", cursive;
   color: #F3F0F0;
   height: 100vh;
   background: url("./media/background.jpg") no-repeat 50% 50%;
   background-size: cover;
 }
-body > .gradient {
+body .gradient {
   background: linear-gradient(167deg, #030101 22%, rgba(0, 0, 0, 0) 100%);
   height: 100vh;
 }
@@ -24,57 +28,64 @@ a:visited {
 }
 
 .title {
-  padding-top: 5px;
+  padding: 5px 0 0 10px;
 }
-.title p {
+.title h1 {
   font-family: "Megrim", cursive;
-  font-size: 50px;
+  font-size: 45px;
+  font-weight: 100;
   text-transform: uppercase;
   margin: 0px;
-  padding-left: 16px;
-  position: absolute;
-}
-.title p:nth-child(1) {
-  color: #FF916B;
-  margin: 3px 0 0 3px;
-  text-shadow: 0 0 5px #FFF, 0 0 10px #FFF, 0 0 15px #FFF, 0 0 20px #FF916B, 7px 8px 17px rgba(206, 89, 55, 0);
-}
-.title p:nth-child(2) {
-  color: #F1485B;
-  margin: 1px 0 0 1px;
-}
-.title p:nth-child(3) {
-  color: #84c1ff;
+  padding-left: 10px;
+  color: #fa9e1e;
+  text-shadow: 2px 2px 0px #84c1ff, 4px 4px 0px #ff1808, 4px 4px 2px #fa9e1e;
 }
 
 .nav {
-  text-align: right;
-  position: relative;
-  margin-top: -110px;
+  position: absolute;
+  top: 4px;
+  right: 10px;
 }
 .nav li {
   display: inline;
   padding: 0 15px;
   border-left: 3px solid #F3F0F0;
 }
+.nav li:hover {
+  border: 2px solid #F3F0F0;
+  transition: 0.5s ease-in-out;
+}
+.nav li:active {
+  border: 5px solid #F3F0F0;
+}
+@media (max-width: 799px) {
+  .nav li {
+    display: none;
+  }
+}
 
 .line {
-  width: 88%;
+  width: 85%;
   height: 100px;
   border: solid 1px #F3F0F0;
-  border-color: orange transparent transparent transparent;
   border-radius: 45%/60px 100px 0 0;
-  margin: 70px 0 0 30px;
+  border-color: #fa9e1e transparent transparent transparent;
+  position: absolute;
+  top: 80px;
+  left: 13%;
 }
 
 .carousel {
-  padding-top: 20px;
-  width: 35%;
-  max-width: 400px;
-  border-radius: 79% 21% 73% 27%/4% 97% 3% 96%;
+  width: 20%;
+  border-radius: 0px 0px 15px 15px;
+  margin: -20px auto 20px auto;
   overflow: hidden;
-  margin: 0 auto;
-  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.63);
+  box-shadow: 8px 8px 4px -3px rgba(0, 0, 0, 0.7);
+}
+@media (max-width: 840px) {
+  .carousel {
+    display: none;
+  }
 }
 .carousel__figure {
   position: relative;
@@ -85,7 +96,7 @@ a:visited {
   animation: 28s sliders infinite;
 }
 .carousel__figure--pic {
-  width: 33.333%;
+  width: 33.33%;
   height: auto;
   float: left;
 }
@@ -119,22 +130,19 @@ a:visited {
     right: 0%;
   }
 }
-#offers {
+.offers {
   padding-top: 50px;
-  width: 100%;
-  height: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  margin: auto;
 }
 
 .perspective {
   width: 100%;
   perspective: 800px;
   display: flex;
+  justify-content: space-between;
 }
-.perspective__card {
+.perspective__3d {
   width: 140px;
   height: 200px;
   margin: auto;
@@ -142,13 +150,13 @@ a:visited {
   transform-style: preserve-3d;
   transition: transform 0.05s linear;
 }
-.perspective__card--thumb {
+.perspective__3d--card {
   background-size: cover;
   height: 100%;
   width: 100%;
   border-radius: 15px;
 }
-.perspective__card--thumb:after {
+.perspective__3d--card:after {
   background: inherit;
   content: "";
   display: block;
@@ -178,10 +186,8 @@ a:visited {
 }
 
 .block {
-  padding-top: 250px;
+  padding-top: 60px;
   position: relative;
-  top: 50%;
-  transform: translateY(-50%);
   margin: 0 auto;
   width: 320px;
 }
@@ -192,36 +198,44 @@ a:visited {
 }
 .block__element {
   fill: transparent;
-  stroke: #FF916B;
-  border-bottom: 5px solid #FF916B;
+  stroke: orange;
+  border-bottom: 5px solid orange;
   transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
   stroke-dasharray: 140 540;
   stroke-dashoffset: -474;
   stroke-width: 8px;
 }
 .block__element--modifier {
+  position: relative;
   text-align: center;
   font-size: 32px;
   line-height: 32px;
   letter-spacing: 8px;
   color: #F3F0F0;
   top: -48px;
-  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 20px;
+  left: 10%;
+  right: 10%;
 }
 
 .credits {
-  margin-top: -70px;
   display: flex;
   justify-content: space-between;
-  padding: 0 70px;
+  padding: 0 80px;
   font-size: 1.3em;
   font-family: "Megrim", cursive;
 }
-
+.credits a {
+  padding: 0px 25px;
+}
 .credits a:hover {
-  transform: scale(3);
-  transition: 0.4s;
-  text-shadow: #F3F0F0 0px 0px 5px, #F3F0F0 0px 0px 10px, #F3F0F0 0px 0px 15px, #FF916B 0px 0px 20px, #FF916B 0px 0px 30px, #FF916B 0px 0px 40px, #FF916B 0px 0px 50px, #FF916B 0px 0px 75px, 2px 2px 2px rgba(64, 131, 114, 0);
+  transform: scale(2.5);
+  transition: 0.4s ease-out;
+  text-shadow: #F3F0F0 0px 0px 5px, #F3F0F0 0px 0px 10px, #F3F0F0 0px 0px 15px, orange 0px 0px 20px, orange 0px 0px 30px, orange 0px 0px 40px, orange 0px 0px 50px, orange 0px 0px 75px, 2px 2px 2px rgba(64, 131, 114, 0);
 }
 .credits a:hover:nth-child(5) {
   transform: scale(1.1);
